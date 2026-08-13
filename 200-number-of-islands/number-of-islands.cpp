@@ -5,6 +5,8 @@ public:
         int m = grid.size();
         int n = grid[0].size();
         
+        vis[row][col] = 1;
+
         vector<int> delRow = {-1,0,1,0};
         vector<int> delCol = {0,-1,0,1};
 
@@ -31,7 +33,6 @@ public:
         for (int i=0; i<m; i++){
             for (int j=0; j<n; j++){
                 if (!vis[i][j] && grid[i][j] == '1'){       // char 1 here
-                    vis[i][j] = 1;
                     dfs(i, j, grid, vis);
                     cnt++;
                 }
